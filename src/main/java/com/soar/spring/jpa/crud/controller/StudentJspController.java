@@ -123,9 +123,12 @@ public class StudentJspController {
                 student = studentService.findStudentByEmail(email);
                 if(student != null){
                     mv.setViewName("editStudent");
-                }else
+                    mv.addObject("message", "");
+                    mv.addObject("studentId",student.getStudentId());
+                }else{
                     mv.setViewName("error");
-                mv.addObject("message", "No such student.");
+                    mv.addObject("message", "No such student.");
+                }
             }
 
         mv.addObject("student", student);
