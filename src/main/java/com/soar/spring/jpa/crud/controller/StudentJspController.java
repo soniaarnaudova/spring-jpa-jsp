@@ -114,5 +114,24 @@ public class StudentJspController {
 
         return mav;
     }
+    
+    @RequestMapping("/email")
+    public ModelAndView getStudentByEmail(@RequestParam("email") String email){
+        ModelAndView mv = new ModelAndView();
+        Student student = null;
+        if (email != null && !"".equals(email)) {
+                student = studentService.findStudentByEmail(email);
+                if(student != null){
+                    mv.setViewName("editStudent");
+                }else
+                    mv.setViewName("error");
+                mv.addObject("message", "No such student.");
+            }
+
+        mv.addObject("student", student);
+
+        return  mv;
+    }
+
 
 }
