@@ -16,7 +16,7 @@
     		<div>
     			<h3 style="color: red">${message}</h3>
     		</div>
-    				<div class="starter-template" style="padding-left: 30px;">
+    		<div class="starter-template" style="padding-left: 30px;">
                      <p>
                      <a href="/add">Add new student</a>
                      </p>
@@ -31,20 +31,32 @@
                 </div>
                 <p/>
             <hr/>
-           	<div class="starter-template" style="padding-left: 30px;">
+        <div class="starter-template" style="padding-left: 30px;">
             <p>Display existing students by e-mail address - read from xls/xlsx file.</p>
-    			<p style="color: red;">The excel file has a format like this:
+    	    <p style="color: red;">The excel file has a format like this:
     				fileName.xlsx or fileName.xls</p>
-    			<p>Select a file to be processed:</p>
-    			<form action="/displayList" method="post"
+    	    <p>Select a file to be processed:</p>
+    	    <form action="/displayList" method="post"
                 				enctype="multipart/form-data">
-                				<div class="container">
-                					<input type="file" name="file" size="50" required /> <br /> <br />
-                					<input type="submit" value="OK" />
-                				</div>
-                			</form>
+                	<div class="container">
+                	    <input type="file" name="file" size="50" required /> <br /> <br />
+                	    <input type="submit" value="OK" />
+                	</div>
+             </form>
+         </div>
+		
+	<hr/>
+        <div class="starter-template" style="padding-left: 30px;">
+                <p>Find existing students by e-mail address.</p>
+                <form action="/email" method="post">
+                            	<div class="container">
+                            		<input type="text" name="email" size="50" required /> <br /> <br />
+                            		<input type="submit" value="OK" />
+                            	</div>
+                </form>
+         </div>
+     </div>
 
-	</div>
-
+	
 </body>
 </html>
