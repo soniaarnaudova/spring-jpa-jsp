@@ -123,6 +123,7 @@ public class StudentJspController {
                 student = studentService.findStudentByEmail(email);
                 if(student != null){
                     mv.setViewName("editStudent");
+                    mv.addObject("student", student);
                     mv.addObject("message", "");
                     mv.addObject("studentId",student.getStudentId());
                 }else{
@@ -130,8 +131,6 @@ public class StudentJspController {
                     mv.addObject("message", "No such student.");
                 }
             }
-
-        mv.addObject("student", student);
 
         return  mv;
     }
